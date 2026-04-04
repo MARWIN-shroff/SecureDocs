@@ -30,22 +30,28 @@ AI-powered document intelligence platform enabling secure storage, semantic sear
 
 ## Setup
 
-### Backend
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- npm or yarn
+
+### Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
-### Frontend
+### Frontend Setup
 ```bash
 cd frontend
 npm install
 ng serve
 ```
 
-### Smart Contracts
+### Smart Contracts Setup
 ```bash
 cd smart-contracts
 npm install
@@ -53,12 +59,13 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
-## Usage
+## API Endpoints
 
-1. Register user with OTP setup
-2. Upload documents (processed by AI agents)
-3. Search documents semantically
-4. Verify document authenticity on blockchain
+- `POST /api/register/` - Register user with OTP
+- `POST /api/verify-otp/` - Verify OTP for login
+- `POST /api/upload/` - Upload document
+- `POST /api/search/` - Semantic search
+- `GET /api/documents/{id}/verify/` - Verify document on blockchain
 
 ## Technologies
 

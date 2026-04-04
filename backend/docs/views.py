@@ -7,8 +7,8 @@ from .models import Document, User
 from .serializers import DocumentSerializer, DocumentUploadSerializer, SearchQuerySerializer, UserSerializer
 from .hashing import calculate_file_hash
 from .blockchain import store_document_hash, verify_document_hash
-from .rag_utils import process_document_for_rag, semantic_search, generate_response
-from .langgraph_utils import process_document_with_agents
+# from .rag_utils import process_document_for_rag, semantic_search, generate_response
+# from .langgraph_utils import process_document_with_agents
 from .otp_utils import generate_otp_secret, verify_otp
 
 class DocumentViewSet(viewsets.ModelViewSet):
@@ -49,12 +49,12 @@ def upload_document(request):
         with open(document.file.path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        agent_result = process_document_with_agents(content)
-        document.metadata = agent_result['metadata']
-        document.save()
+        # agent_result = process_document_with_agents(content)
+        # document.metadata = agent_result['metadata']
+        # document.save()
         
         # Process for RAG
-        process_document_for_rag(document)
+        # process_document_for_rag(document)
         
         # Store hash on blockchain
         try:
@@ -78,14 +78,14 @@ def search_documents(request):
         query = serializer.validated_data['query']
         
         # Perform semantic search
-        results = semantic_search(query)
+        # results = semantic_search(query)
         
         # Generate AI response
-        response = generate_response(query)
+        # response = generate_response(query)
         
         return Response({
-            'results': results,
-            'ai_response': response
+            'results': [],
+            'ai_response': 'Search functionality not yet implemented'
         })
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

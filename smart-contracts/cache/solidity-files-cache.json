@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\shrof\\OneDrive\\Desktop\\SecureDocs\\smart-contracts\\contracts\\SecureDocs.sol": {
+      "lastModificationDate": 1775284987437,
+      "contentHash": "70a4d7cf8d4088329819782f095ee55e",
+      "sourceName": "contracts/SecureDocs.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SecureDocs"
+      ]
+    }
+  }
+}

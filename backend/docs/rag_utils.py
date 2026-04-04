@@ -2,11 +2,11 @@ import os
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
-from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
 from langchain.chains import RetrievalQA
-from langchain.vectorstores import FAISS as LangFAISS
-from langchain.embeddings import SentenceTransformerEmbeddings
-from langchain.docstore.document import Document as LangDocument
+from langchain_community.vectorstores import FAISS as LangFAISS
+from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain.schema import Document as LangDocument
 from django.conf import settings
 from .models import DocumentChunk
 
